@@ -1,0 +1,23 @@
+<button routerLink="add">Them san pham</button>
+<table>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td routerLink="detail/{{product.id}}">{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <button (click)="removeItem(product.id)">xoa</button>
+                <button routerLink="update/{{product.id}}">Edit</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
